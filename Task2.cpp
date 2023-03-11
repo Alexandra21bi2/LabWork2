@@ -2,26 +2,24 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-#include <windows.h>
+
 int main()
 {
-    //Установка кодировки
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    //Размер списка
+    setlocale(LC_ALL, "Russian");
+    //ГђГ Г§Г¬ГҐГ° Г±ГЇГЁГ±ГЄГ 
     size_t const size_vector = 6;
-    //Вектор: параметр 1 - класс; параметр 2 - фамилия
+    //Г‚ГҐГЄГІГ®Г°: ГЇГ Г°Г Г¬ГҐГІГ° 1 - ГЄГ«Г Г±Г±; ГЇГ Г°Г Г¬ГҐГІГ° 2 - ГґГ Г¬ГЁГ«ГЁГї
     std::vector <std::pair <size_t, std::string> > students(size_vector);
-    //Ввод значений
+    //Г‚ГўГ®Г¤ Г§Г­Г Г·ГҐГ­ГЁГ©
     for (size_t i = 0; i < size_vector; i++)
         std::cin >> students[i].first >> students[i].second;
-    //Сортировка по возрастанию класса
+    //Г‘Г®Г°ГІГЁГ°Г®ГўГЄГ  ГЇГ® ГўГ®Г§Г°Г Г±ГІГ Г­ГЁГѕ ГЄГ«Г Г±Г±Г 
     std::sort(students.begin(), students.end(), [](std::pair<size_t, std::string> f, std::pair<size_t, std::string> s)
         {
             return f.first < s.first;
         });
     std::cout << "\n";
-    //Вывод отсортированного списка
+    //Г‚Г»ГўГ®Г¤ Г®ГІГ±Г®Г°ГІГЁГ°Г®ГўГ Г­Г­Г®ГЈГ® Г±ГЇГЁГ±ГЄГ 
     for (size_t i = 0; i < size_vector; i++)
         std::cout << students[i].first << " " << students[i].second << "\n";
     return 0;

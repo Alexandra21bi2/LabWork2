@@ -7,7 +7,7 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     //Ðàçìåð ñïèñêà
-    size_t const size_vector = 6;
+    size_t const size_vector = 6; 
     //Âåêòîð: ïàðàìåòð 1 - êëàññ; ïàðàìåòð 2 - ôàìèëèÿ
     std::vector <std::pair <size_t, std::string> > students(size_vector);
     //Ââîä çíà÷åíèé
